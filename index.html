@@ -6,100 +6,70 @@
 <title>YAĞIZ DEHA KAFTAR | Film</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#0b0b0b;
-  color:white;
+  background:#080808;
+  color:#fff;
 }
 
 header{
-  height:70px;
   background:#111;
+  padding:18px 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 6%;
+  gap:20px;
   position:sticky;
   top:0;
   z-index:100;
-  border-bottom:1px solid #222;
+  border-bottom:1px solid #292929;
 }
 
 .logo{
-  font-size:24px;
-  font-weight:bold;
   color:#e50914;
+  font-size:25px;
+  font-weight:900;
   letter-spacing:2px;
+  white-space:nowrap;
 }
 
 nav a{
-  color:white;
+  color:#fff;
   text-decoration:none;
-  margin:0 15px;
-  font-size:15px;
+  font-weight:bold;
 }
 
 .search{
-  background:#222;
+  width:240px;
+  padding:11px 14px;
   border:1px solid #444;
-  color:white;
-  padding:10px 14px;
   border-radius:5px;
-  width:220px;
+  background:#222;
+  color:#fff;
 }
 
 .hero{
-  min-height:430px;
+  padding:90px 7%;
+  min-height:400px;
   display:flex;
   align-items:center;
-  padding:70px 7%;
   background:
-    linear-gradient(90deg,#000 15%,rgba(0,0,0,.75),rgba(0,0,0,.2)),
-    radial-gradient(circle at 75% 30%,#6d0010,#120000 55%,#000);
-}
-
-.hero-content{
-  max-width:650px;
+    linear-gradient(90deg,#000 10%,rgba(0,0,0,.75),rgba(0,0,0,.2)),
+    radial-gradient(circle at 80% 30%,#65000d,#120000 50%,#000);
 }
 
 .hero h1{
   font-size:52px;
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
 .hero p{
+  max-width:650px;
   color:#ccc;
-  line-height:1.7;
   font-size:17px;
-}
-
-.buttons{
-  margin-top:25px;
-}
-
-button{
-  border:none;
-  padding:12px 22px;
-  border-radius:5px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.play{
-  background:white;
-  color:black;
-}
-
-.info{
-  background:#444;
-  color:white;
-  margin-left:10px;
+  line-height:1.7;
 }
 
 .container{
@@ -108,9 +78,9 @@ button{
   margin:auto;
 }
 
-.section-title{
-  margin:35px 0 18px;
-  font-size:25px;
+.title{
+  margin:35px 0 20px;
+  font-size:28px;
 }
 
 .categories{
@@ -121,18 +91,18 @@ button{
 }
 
 .category{
+  border:1px solid #444;
   background:#222;
-  color:#ddd;
+  color:#fff;
   padding:9px 15px;
   border-radius:20px;
   cursor:pointer;
-  border:1px solid #333;
 }
 
 .category.active,
 .category:hover{
   background:#e50914;
-  color:white;
+  border-color:#e50914;
 }
 
 .grid{
@@ -146,8 +116,8 @@ button{
   background:#171717;
   border-radius:8px;
   overflow:hidden;
-  transition:.25s;
-  border:1px solid #252525;
+  border:1px solid #282828;
+  transition:.2s;
 }
 
 .card:hover{
@@ -156,14 +126,14 @@ button{
 }
 
 .poster{
-  height:290px;
+  height:270px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
-  background:linear-gradient(145deg,#3b0000,#111);
-  font-size:24px;
+  background:linear-gradient(145deg,#480009,#151515);
+  font-size:22px;
   font-weight:bold;
 }
 
@@ -171,41 +141,50 @@ button{
   padding:16px;
 }
 
-.card h3{
-  margin-bottom:8px;
+.card-body h3{
+  margin-bottom:7px;
 }
 
-.card p{
+.card-body p{
   color:#999;
   font-size:13px;
-  min-height:36px;
+  min-height:35px;
 }
 
 .watch{
   width:100%;
   margin-top:14px;
+  padding:11px;
+  border:0;
+  border-radius:5px;
   background:#e50914;
-  color:white;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.watch:hover{
+  background:#ff1b26;
 }
 
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.92);
+  background:rgba(0,0,0,.93);
   z-index:999;
   align-items:center;
   justify-content:center;
   padding:20px;
 }
 
-.modal.active{
+.modal.show{
   display:flex;
 }
 
 .modal-box{
   width:95%;
-  max-width:900px;
+  max-width:950px;
   background:#111;
   padding:20px;
   border-radius:10px;
@@ -213,43 +192,42 @@ button{
 
 .close{
   float:right;
-  font-size:28px;
+  font-size:30px;
   cursor:pointer;
+}
+
+.modal h2{
+  margin-bottom:10px;
 }
 
 video{
   width:100%;
-  margin-top:15px;
-  background:black;
-  max-height:70vh;
+  max-height:75vh;
+  background:#000;
 }
 
 footer{
-  border-top:1px solid #222;
-  padding:30px;
+  padding:35px;
   text-align:center;
   color:#777;
+  border-top:1px solid #222;
 }
 
 @media(max-width:700px){
   header{
-    height:auto;
-    padding:15px;
-    gap:12px;
     flex-wrap:wrap;
-  }
-
-  nav{
-    display:none;
   }
 
   .search{
     width:100%;
   }
 
+  nav{
+    display:none;
+  }
+
   .hero{
-    min-height:380px;
-    padding:45px 6%;
+    padding:55px 6%;
   }
 
   .hero h1{
@@ -263,7 +241,7 @@ footer{
 
   .poster{
     height:210px;
-    font-size:18px;
+    font-size:17px;
   }
 }
 </style>
@@ -287,372 +265,516 @@ footer{
 </header>
 
 <section class="hero">
-  <div class="hero-content">
+  <div>
     <h1>YAĞIZ DEHA KAFTAR</h1>
-
     <p>
-      Ücretsiz izleyebileceğin açık lisanslı ve kamu malı kısa filmler.
-      Film seç, oynat ve keyfini çıkar.
+      Ücretsiz izlenebilen gerçek klasik filmler ve açık lisanslı
+      sinema içeriklerinden oluşan film kataloğu.
     </p>
-
-    <div class="buttons">
-      <button class="play" onclick="document.getElementById('filmler').scrollIntoView()">
-        ▶ Filmleri Gör
-      </button>
-
-      <button class="info" onclick="alert('YAĞIZ DEHA KAFTAR Film')">
-        ⓘ Bilgi
-      </button>
-    </div>
   </div>
 </section>
 
 <main class="container" id="filmler">
 
-  <h2 class="section-title">Film Kategorileri</h2>
+<h2 class="title">🎬 Film Kataloğu — 30 Film</h2>
 
-  <div class="categories">
-    <button class="category active" data-cat="all">Tümü</button>
-    <button class="category" data-cat="american">🇺🇸 Amerikan</button>
-    <button class="category" data-cat="korean">🇰🇷 Kore</button>
-    <button class="category" data-cat="turkish">🇹🇷 Türk</button>
-    <button class="category" data-cat="kids">👧 Çocuk</button>
-    <button class="category" data-cat="animation">🎨 Animasyon</button>
-  </div>
+<div class="categories">
+  <button class="category active" data-cat="all">Tümü</button>
+  <button class="category" data-cat="comedy">😂 Komedi</button>
+  <button class="category" data-cat="chaplin">🎩 Chaplin</button>
+  <button class="category" data-cat="animation">🎨 Animasyon</button>
+  <button class="category" data-cat="classic">🎞️ Klasikler</button>
+</div>
 
-  <div class="grid" id="filmGrid">
+<div class="grid">
 
-    <article class="card" data-cat="animation">
-      <div class="poster">BIG BUCK BUNNY</div>
-      <div class="card-body">
-        <h3>Big Buck Bunny</h3>
-        <p>Animasyon · CC BY 3.0</p>
-        <button class="watch"
-          onclick="openFilm(
-          'Big Buck Bunny',
-          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm'
-          )">
-          ▶ İzle
-        </button>
-      </div>
-    </article>
+<!-- 1 -->
+<article class="card" data-cat="comedy">
+<div class="poster">A BUSY DAY</div>
+<div class="card-body">
+<h3>A Busy Day</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'A Busy Day (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">ELEPHANTS DREAM</div>
-      <div class="card-body">
-        <h3>Elephants Dream</h3>
-        <p>Animasyon · CC BY 2.5</p>
-        <button class="watch"
-          onclick="openFilm(
-          'Elephants Dream',
-          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants_Dream_(2006).webm'
-          )">
-          ▶ İzle
-        </button>
-      </div>
-    </article>
+<!-- 2 -->
+<article class="card" data-cat="comedy">
+<div class="poster">BETWEEN SHOWERS</div>
+<div class="card-body">
+<h3>Between Showers</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Between Showers (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Between_Showers_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="kids">
-      <div class="poster">CINDERELLA</div>
-      <div class="card-body">
-        <h3>Cinderella</h3>
-        <p>1911 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm(
-          'Cinderella (1911)',
-          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cinderella_(1911).webm'
-          )">
-          ▶ İzle
-        </button>
-      </div>
-    </article>
+<!-- 3 -->
+<article class="card" data-cat="comedy">
+<div class="poster">CAUGHT IN THE RAIN</div>
+<div class="card-body">
+<h3>Caught in the Rain</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Caught in the Rain (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Caught_in_the_Rain_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="american">
-      <div class="poster">A BUSY DAY</div>
-      <div class="card-body">
-        <h3>A Busy Day</h3>
-        <p>1914 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm(
-          'A Busy Day (1914)',
-          'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm'
-          )">
-          ▶ İzle
-        </button>
-      </div>
-    </article>
+<!-- 4 -->
+<article class="card" data-cat="comedy">
+<div class="poster">CRUEL CRUEL LOVE</div>
+<div class="card-body">
+<h3>Cruel, Cruel Love</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Cruel, Cruel Love (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cruel,_Cruel_Love_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="american">
-      <div class="poster">MABEL'S BUSY DAY</div>
-      <div class="card-body">
-        <h3>Mabel's Busy Day</h3>
-        <p>1914 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm(
-          'Mabel’s Busy Day (1914)',
-          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Mabel%27s_Busy_Day_(1914).webm'
-          )">
-          ▶ İzle
-        </button>
-      </div>
-    </article>
+<!-- 5 -->
+<article class="card" data-cat="classic">
+<div class="poster">FACE ON THE BAR ROOM FLOOR</div>
+<div class="card-body">
+<h3>The Face on the Bar Room Floor</h3>
+<p>1914 · Klasik kısa film</p>
+<button class="watch" onclick="playFilm(
+'The Face on the Bar Room Floor (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Face_on_the_Bar_Room_Floor_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="american">
-      <div class="poster">FROM HAND TO MOUTH</div>
-      <div class="card-body">
-        <h3>From Hand to Mouth</h3>
-        <p>1919 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm(
-          'From Hand to Mouth (1919)',
-          ''
-          )">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 6 -->
+<article class="card" data-cat="comedy">
+<div class="poster">THE FATAL MALLET</div>
+<div class="card-body">
+<h3>The Fatal Mallet</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'The Fatal Mallet (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Fatal_Mallet_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="american">
-      <div class="poster">RAMONA</div>
-      <div class="card-body">
-        <h3>Ramona</h3>
-        <p>1910 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm('Ramona (1910)','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 7 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">A FILM JOHNNIE</div>
+<div class="card-body">
+<h3>A Film Johnnie</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'A Film Johnnie (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Film_Johnnie_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="american">
-      <div class="poster">THE KNOCKOUT</div>
-      <div class="card-body">
-        <h3>The Knockout</h3>
-        <p>1914 · Kamu malı</p>
-        <button class="watch"
-          onclick="openFilm('The Knockout (1914)','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 8 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">GENTLEMEN OF NERVE</div>
+<div class="card-body">
+<h3>Gentlemen of Nerve</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'Gentlemen of Nerve (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Gentlemen_of_Nerve_1914_CHARLIE_CHAPLIN_MABEL_NORMAND_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">CAMINANDES</div>
-      <div class="card-body">
-        <h3>Caminandes</h3>
-        <p>Blender Open Movie</p>
-        <button class="watch"
-          onclick="openFilm('Caminandes','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 9 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">GETTING ACQUAINTED</div>
+<div class="card-body">
+<h3>Getting Acquainted</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'Getting Acquainted (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Getting_Acquainted_1914_CHARLIE_CHAPLIN_MABEL_NORMAND_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">SPRING</div>
-      <div class="card-body">
-        <h3>Spring</h3>
-        <p>Blender Open Movie</p>
-        <button class="watch"
-          onclick="openFilm('Spring','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 10 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">HIS FAVORITE PASTIME</div>
+<div class="card-body">
+<h3>His Favorite Pastime</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'His Favorite Pastime (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Favorite_Pastime_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">TEARS OF STEEL</div>
-      <div class="card-body">
-        <h3>Tears of Steel</h3>
-        <p>Blender Open Movie</p>
-        <button class="watch"
-          onclick="openFilm('Tears of Steel','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 11 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">HIS MUSICAL CAREER</div>
+<div class="card-body">
+<h3>His Musical Career</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'His Musical Career (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Musical_Career_1914_CHARLIE_CHAPLIN_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">SINTEL</div>
-      <div class="card-body">
-        <h3>Sintel</h3>
-        <p>Blender Open Movie</p>
-        <button class="watch"
-          onclick="openFilm('Sintel','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 12 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">HIS NEW PROFESSION</div>
+<div class="card-body">
+<h3>His New Profession</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'His New Profession (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/His_New_Profession_(1914)_-_CHARLIE_CHAPLIN_-_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="animation">
-      <div class="poster">COSMOS LAUNDR0MAT</div>
-      <div class="card-body">
-        <h3>Cosmos Laundromat</h3>
-        <p>Blender Open Movie</p>
-        <button class="watch"
-          onclick="openFilm('Cosmos Laundromat','')">
-          ▶ Bilgi
-        </button>
-      </div>
-    </article>
+<!-- 13 -->
+<article class="card" data-cat="comedy">
+<div class="poster">HIS PREHISTORIC PAST</div>
+<div class="card-body">
+<h3>His Prehistoric Past</h3>
+<p>1914 · Komedi</p>
+<button class="watch" onclick="playFilm(
+'His Prehistoric Past (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Prehistoric_Past_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="korean">
-      <div class="poster">KORE SHORT 01</div>
-      <div class="card-body">
-        <h3>Kore Kısa Film</h3>
-        <p>Yakında eklenecek</p>
-        <button class="watch"
-          onclick="alert('Kore filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 14 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">HIS TRYSTING PLACE</div>
+<div class="card-body">
+<h3>His Trysting Place</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'His Trysting Place (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Trysting_Place_1914_CHARLIE_CHAPLIN_MABEL_NORMAND_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="korean">
-      <div class="poster">KORE ANIMATION</div>
-      <div class="card-body">
-        <h3>Kore Animasyonu</h3>
-        <p>Yakında eklenecek</p>
-        <button class="watch"
-          onclick="alert('Kore filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 15 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">THE ROUNDERS</div>
+<div class="card-body">
+<h3>The Rounders</h3>
+<p>1914 · Chaplin & Fatty Arbuckle</p>
+<button class="watch" onclick="playFilm(
+'The Rounders (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Rounders_(1914)_-_CHARLIE_CHAPLIN_%26_FATTY_ARBUCKLE_-_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="turkish">
-      <div class="poster">TÜRK KISA 01</div>
-      <div class="card-body">
-        <h3>Türk Kısa Film</h3>
-        <p>Yakında eklenecek</p>
-        <button class="watch"
-          onclick="alert('Türk filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 16 -->
+<article class="card" data-cat="comedy">
+<div class="poster">TANGO TANGLES</div>
+<div class="card-body">
+<h3>Tango Tangles</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Tango Tangles (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tango_Tangles_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="turkish">
-      <div class="poster">TÜRK KISA 02</div>
-      <div class="card-body">
-        <h3>Türk Kısa Film 2</h3>
-        <p>Yakında eklenecek</p>
-        <button class="watch"
-          onclick="alert('Türk filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 17 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">THOSE LOVE PANGS</div>
+<div class="card-body">
+<h3>Those Love Pangs</h3>
+<p>1914 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'Those Love Pangs (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Those_Love_Pangs_1914_CHARLIE_CHAPLIN_CHESTER_CONKLIN_Mack_Sennett.webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="kids">
-      <div class="poster">ÇOCUK FİLMİ 01</div>
-      <div class="card-body">
-        <h3>Çocuk Filmi</h3>
-        <p>Açık lisanslı içerik</p>
-        <button class="watch"
-          onclick="alert('Film videosu yakında eklenecek.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 18 -->
+<article class="card" data-cat="comedy">
+<div class="poster">TWENTY MINUTES OF LOVE</div>
+<div class="card-body">
+<h3>Twenty Minutes of Love</h3>
+<p>1914 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Twenty Minutes of Love (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Twenty_Minutes_of_Love_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-    <article class="card" data-cat="kids">
-      <div class="poster">ÇOCUK FİLMİ 02</div>
-      <div class="card-body">
-        <h3>Çocuk Filmi 2</h3>
-        <p>Açık lisanslı içerik</p>
-        <button class="watch"
-          onclick="alert('Film videosu yakında eklenecek.')">
-          Yakında
-        </button>
-      </div>
-    </article>
+<!-- 19 -->
+<article class="card" data-cat="classic">
+<div class="poster">THE THIEF CATCHER</div>
+<div class="card-body">
+<h3>A Thief Catcher</h3>
+<p>1914 · Klasik kısa film</p>
+<button class="watch" onclick="playFilm(
+'A Thief Catcher (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Thief_Catcher_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
 
-  </div>
+<!-- 20 -->
+<article class="card" data-cat="comedy">
+<div class="poster">THE KNOCKOUT</div>
+<div class="card-body">
+<h3>The Knockout</h3>
+<p>1914 · Kamu malı</p>
+<button class="watch" onclick="playFilm(
+'The Knockout (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Knockout_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 21 -->
+<article class="card" data-cat="classic">
+<div class="poster">BY THE SUN'S RAYS</div>
+<div class="card-body">
+<h3>By the Sun's Rays</h3>
+<p>1914 · Lon Chaney</p>
+<button class="watch" onclick="playFilm(
+'By the Sun’s Rays (1914)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/By_The_Suns_Rays_(1914).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 22 -->
+<article class="card" data-cat="classic">
+<div class="poster">ALGIE THE MINER</div>
+<div class="card-body">
+<h3>Algie the Miner</h3>
+<p>1912 · Kısa film</p>
+<button class="watch" onclick="playFilm(
+'Algie the Miner (1912)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Algie_the_Miner_(1912).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 23 -->
+<article class="card" data-cat="classic">
+<div class="poster">DR JEKYLL</div>
+<div class="card-body">
+<h3>Dr. Jekyll and Mr. Hyde</h3>
+<p>1912 · Klasik korku</p>
+<button class="watch" onclick="playFilm(
+'Dr. Jekyll and Mr. Hyde (1912)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Dr._Jekyll_and_Mr._Hyde_(1912)_by_Lucius_J._Henderson.webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 24 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">THE ADVENTURER</div>
+<div class="card-body">
+<h3>The Adventurer</h3>
+<p>1917 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'The Adventurer (1917)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Adventurer_(1917).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 25 -->
+<article class="card" data-cat="comedy">
+<div class="poster">BLISS</div>
+<div class="card-body">
+<h3>Bliss</h3>
+<p>1917 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'Bliss (1917)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bliss_1917_HAROLD_LLOYD_BEBE_DANIELS_SNUB_POLLARD_Alfred_J_Goulding.webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 26 -->
+<article class="card" data-cat="comedy">
+<div class="poster">THE CANDY KID</div>
+<div class="card-body">
+<h3>The Candy Kid</h3>
+<p>1917 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'The Candy Kid (1917)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Candy_Kid_(1917).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 27 -->
+<article class="card" data-cat="comedy">
+<div class="poster">THE CHIEF COOK</div>
+<div class="card-body">
+<h3>The Chief Cook</h3>
+<p>1917 · Kısa komedi</p>
+<button class="watch" onclick="playFilm(
+'The Chief Cook (1917)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Chief_Cook_(1917).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 28 -->
+<article class="card" data-cat="comedy">
+<div class="poster">OUT WEST</div>
+<div class="card-body">
+<h3>Out West</h3>
+<p>1918 · Klasik komedi</p>
+<button class="watch" onclick="playFilm(
+'Out West (1918)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Out_West_(1918).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 29 -->
+<article class="card" data-cat="chaplin">
+<div class="poster">TRIPLE TROUBLE</div>
+<div class="card-body">
+<h3>Triple Trouble</h3>
+<p>1918 · Charlie Chaplin</p>
+<button class="watch" onclick="playFilm(
+'Triple Trouble (1918)',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Triple_Trouble_(Charlie_Chaplin,_1918).webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+<!-- 30 -->
+<article class="card" data-cat="animation">
+<div class="poster">BIG BUCK BUNNY</div>
+<div class="card-body">
+<h3>Big Buck Bunny</h3>
+<p>2008 · Creative Commons</p>
+<button class="watch" onclick="playFilm(
+'Big Buck Bunny',
+'https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm'
+)">▶ İzle</button>
+</div>
+</article>
+
+</div>
 </main>
 
 <div class="modal" id="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeFilm()">×</span>
-    <h2 id="modalTitle">Film</h2>
-
-    <video id="video" controls>
-      <source id="videoSource" src="" type="video/webm">
-      Tarayıcınız video oynatmayı desteklemiyor.
-    </video>
-  </div>
+<div class="modal-box">
+<span class="close" onclick="closeFilm()">×</span>
+<h2 id="modalTitle"></h2>
+<video id="video" controls autoplay>
+<source id="videoSource" src="" type="video/webm">
+Tarayıcınız video oynatmayı desteklemiyor.
+</video>
+</div>
 </div>
 
 <footer>
-  © 2026 YAĞIZ DEHA KAFTAR · YDK FILM
+© 2026 YAĞIZ DEHA KAFTAR · YDK FILM
 </footer>
 
 <script>
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".card");
-const categories = document.querySelectorAll(".category");
 
-search.addEventListener("input", function(){
-  const text = this.value.toLowerCase();
+const search=document.getElementById("search");
+const cards=document.querySelectorAll(".card");
+const categories=document.querySelectorAll(".category");
 
-  cards.forEach(card=>{
-    const title = card.innerText.toLowerCase();
+search.addEventListener("input",function(){
 
-    card.style.display =
-      title.includes(text) ? "" : "none";
-  });
+const text=this.value.toLowerCase();
+
+cards.forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(text)
+?"":"none";
+});
+
 });
 
 categories.forEach(button=>{
-  button.addEventListener("click",()=>{
-    categories.forEach(b=>b.classList.remove("active"));
-    button.classList.add("active");
 
-    const cat = button.dataset.cat;
+button.addEventListener("click",()=>{
 
-    cards.forEach(card=>{
-      if(cat === "all" || card.dataset.cat === cat){
-        card.style.display = "";
-      }else{
-        card.style.display = "none";
-      }
-    });
-  });
+categories.forEach(b=>b.classList.remove("active"));
+button.classList.add("active");
+
+const cat=button.dataset.cat;
+
+cards.forEach(card=>{
+
+if(cat==="all" || card.dataset.cat===cat){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+
 });
 
-function openFilm(title,url){
-  const modal = document.getElementById("modal");
-  const video = document.getElementById("video");
-  const source = document.getElementById("videoSource");
+});
 
-  document.getElementById("modalTitle").textContent = title;
+});
 
-  if(url){
-    source.src = url;
-    video.style.display = "block";
-    video.load();
-  }else{
-    source.src = "";
-    video.style.display = "none";
-    alert("Bu film için henüz doğrulanmış video bağlantısı eklenmedi.");
-  }
+function playFilm(title,url){
 
-  modal.classList.add("active");
+const modal=document.getElementById("modal");
+const video=document.getElementById("video");
+const source=document.getElementById("videoSource");
+
+document.getElementById("modalTitle").textContent=title;
+
+source.src=url;
+
+video.load();
+
+modal.classList.add("show");
+
+video.play().catch(()=>{});
+
 }
 
 function closeFilm(){
-  const modal = document.getElementById("modal");
-  const video = document.getElementById("video");
 
-  video.pause();
-  modal.classList.remove("active");
+const modal=document.getElementById("modal");
+const video=document.getElementById("video");
+
+video.pause();
+video.currentTime=0;
+
+modal.classList.remove("show");
+
 }
 
 document.getElementById("modal").addEventListener("click",function(e){
-  if(e.target === this){
-    closeFilm();
-  }
+
+if(e.target===this){
+closeFilm();
+}
+
 });
+
 </script>
 
 </body>
