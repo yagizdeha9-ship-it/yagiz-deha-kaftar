@@ -1,170 +1,257 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yağız Deha Kaftar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<title>Yağız Deha Kaftar | Film Dünyası</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #080808;
-      color: white;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.search {
+    background: #222;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    width: 180px;
+}
+
+.hero {
+    min-height: 500px;
+    padding: 100px 6%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #080808 10%, transparent),
+        linear-gradient(135deg, #3b0808, #101010);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.watch {
+    display: inline-block;
+    background: #e50914;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.section {
+    padding: 35px 5%;
+}
+
+.section h2 {
+    font-size: 25px;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.movie {
+    height: 270px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(145deg, #333, #111);
+    transition: 0.25s;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie h3 {
+    margin: 0;
+}
+
+.rating {
+    color: #ffd700;
+    margin-top: 7px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+    border-top: 1px solid #222;
+}
+
+@media (max-width: 600px) {
 
     header {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      background: #080808;
-      border-bottom: 1px solid #222;
+        padding: 0 20px;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #e50914;
+    nav {
+        display: none;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
+    .search {
+        width: 130px;
     }
 
     .hero {
-      min-height: 430px;
-      padding: 90px 50px;
-      background:
-        linear-gradient(90deg, #080808 20%, rgba(8,8,8,.75), rgba(8,8,8,.15)),
-        linear-gradient(135deg, #301010, #111);
+        padding: 70px 25px;
     }
 
     .hero h1 {
-      font-size: 50px;
-      margin: 0 0 15px;
+        font-size: 38px;
     }
-
-    .hero p {
-      max-width: 550px;
-      color: #ccc;
-      line-height: 1.6;
-      font-size: 17px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 13px 25px;
-      background: #e50914;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 35px 40px;
-    }
-
-    .section h2 {
-      margin-bottom: 20px;
-    }
-
-    .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      width: 190px;
-      height: 270px;
-      border-radius: 8px;
-      padding: 20px;
-      display: flex;
-      align-items: flex-end;
-      background: linear-gradient(145deg, #292929, #111);
-      transition: .2s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px;
-      color: #777;
-      border-top: 1px solid #222;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">YDK</div>
+<header>
 
-    <nav>
-      <a href="#">Ana Sayfa</a>
-      <a href="#filmler">Filmler</a>
-      <a href="#hakkinda">Hakkında</a>
-    </nav>
-  </header>
+<div class="logo">
+YDK
+</div>
 
-  <section class="hero">
-    <h1>YAĞIZ DEHA KAFTAR</h1>
+<nav>
+<a href="#">Ana Sayfa</a>
+<a href="#filmler">Filmler</a>
+<a href="#hakkinda">Hakkında</a>
+</nav>
 
-    <p>
-      Kendi film ve kısa film dünyana hoş geldin.
-      Burada ücretsiz olarak paylaşılabilen içerikleri
-      keşfedebilir ve izleyebilirsin.
-    </p>
+<input
+class="search"
+type="text"
+placeholder="Film ara..."
+>
 
-    <a class="button" href="#filmler">Keşfet</a>
-  </section>
+</header>
 
-  <section class="section" id="filmler">
-    <h2>🎬 Öne Çıkanlar</h2>
+<section class="hero">
 
-    <div class="cards">
-      <div class="card">
-        <strong>Kısa Film 1</strong>
-      </div>
+<div class="hero-content">
 
-      <div class="card">
-        <strong>Kısa Film 2</strong>
-      </div>
+<h1>
+YAĞIZ DEHA KAFTAR
+</h1>
 
-      <div class="card">
-        <strong>Kısa Film 3</strong>
-      </div>
+<p>
+Ücretsiz kısa filmler ve özel içeriklerin
+yer aldığı film dünyasına hoş geldin.
+</p>
 
-      <div class="card">
-        <strong>Kısa Film 4</strong>
-      </div>
-    </div>
-  </section>
+<a class="watch" href="#filmler">
+▶ Filmleri Keşfet
+</a>
 
-  <section class="section" id="hakkinda">
-    <h2>Hakkında</h2>
-    <p>
-      Bu site Yağız Deha Kaftar tarafından hazırlanmıştır.
-    </p>
-  </section>
+</div>
 
-  <footer>
-    © 2026 Yağız Deha Kaftar
-  </footer>
+</section>
+
+<section class="section" id="filmler">
+
+<h2>🎬 Öne Çıkan Filmler</h2>
+
+<div class="movies">
+
+<div class="movie">
+<div>
+<h3>Kısa Film 1</h3>
+<div class="rating">★★★★★</div>
+</div>
+</div>
+
+<div class="movie">
+<div>
+<h3>Kısa Film 2</h3>
+<div class="rating">★★★★☆</div>
+</div>
+</div>
+
+<div class="movie">
+<div>
+<h3>Kısa Film 3</h3>
+<div class="rating">★★★★★</div>
+</div>
+</div>
+
+<div class="movie">
+<div>
+<h3>Kısa Film 4</h3>
+<div class="rating">★★★★☆</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="hakkinda">
+
+<h2>👑 Hakkında</h2>
+
+<p>
+Bu site Yağız Deha Kaftar tarafından hazırlanmıştır.
+</p>
+
+</section>
+
+<footer>
+
+© 2026 Yağız Deha Kaftar
+
+</footer>
 
 </body>
 </html>
