@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YAĞIZ DEHA KAFTAR | Film Dünyası</title>
+<title>YAĞIZ DEHA KAFTAR | Film</title>
 
 <style>
 *{
@@ -13,54 +13,55 @@
 }
 
 body{
-  background:#090909;
-  color:white;
   font-family:Arial,Helvetica,sans-serif;
+  background:#0b0b0b;
+  color:white;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(0,0,0,.94);
-  padding:18px 5%;
+  height:70px;
+  background:#111;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:100;
   border-bottom:1px solid #222;
 }
 
 .logo{
+  font-size:24px;
+  font-weight:bold;
   color:#e50914;
-  font-size:25px;
-  font-weight:900;
-  white-space:nowrap;
+  letter-spacing:2px;
 }
 
-.search{
-  width:330px;
-  background:#181818;
-  border:1px solid #444;
+nav a{
   color:white;
-  padding:12px 16px;
-  border-radius:8px;
-  outline:none;
+  text-decoration:none;
+  margin:0 15px;
   font-size:15px;
 }
 
-.search:focus{
-  border-color:#e50914;
+.search{
+  background:#222;
+  border:1px solid #444;
+  color:white;
+  padding:10px 14px;
+  border-radius:5px;
+  width:220px;
 }
 
 .hero{
-  min-height:390px;
-  padding:70px 7%;
+  min-height:430px;
   display:flex;
   align-items:center;
+  padding:70px 7%;
   background:
-    linear-gradient(90deg,#090909 20%,rgba(9,9,9,.7),rgba(9,9,9,.15)),
-    radial-gradient(circle at 80% 40%,#64151b,#090909 55%);
+    linear-gradient(90deg,#000 15%,rgba(0,0,0,.75),rgba(0,0,0,.2)),
+    radial-gradient(circle at 75% 30%,#6d0010,#120000 55%,#000);
 }
 
 .hero-content{
@@ -69,271 +70,200 @@ header{
 
 .hero h1{
   font-size:52px;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
 .hero p{
   color:#ccc;
-  font-size:18px;
-  line-height:1.6;
-  margin-bottom:25px;
+  line-height:1.7;
+  font-size:17px;
 }
 
-.hero button{
-  background:#e50914;
-  color:white;
-  border:0;
-  padding:14px 25px;
-  border-radius:6px;
-  font-size:16px;
-  font-weight:bold;
+.buttons{
+  margin-top:25px;
+}
+
+button{
+  border:none;
+  padding:12px 22px;
+  border-radius:5px;
   cursor:pointer;
+  font-weight:bold;
 }
 
-.hero button:hover{
-  background:#ff1a25;
+.play{
+  background:white;
+  color:black;
+}
+
+.info{
+  background:#444;
+  color:white;
+  margin-left:10px;
 }
 
 .container{
-  padding:35px 5%;
+  width:90%;
+  max-width:1250px;
+  margin:auto;
 }
 
 .section-title{
-  font-size:28px;
-  margin-bottom:20px;
+  margin:35px 0 18px;
+  font-size:25px;
 }
 
 .categories{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
-.categories button{
-  background:#202020;
-  color:white;
-  border:1px solid #444;
-  padding:10px 17px;
+.category{
+  background:#222;
+  color:#ddd;
+  padding:9px 15px;
   border-radius:20px;
   cursor:pointer;
+  border:1px solid #333;
 }
 
-.categories button:hover,
-.categories button.active{
+.category.active,
+.category:hover{
   background:#e50914;
-  border-color:#e50914;
+  color:white;
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
+  padding-bottom:50px;
 }
 
 .card{
-  background:#151515;
-  border-radius:10px;
+  background:#171717;
+  border-radius:8px;
   overflow:hidden;
   transition:.25s;
-  cursor:pointer;
-  border:1px solid #242424;
+  border:1px solid #252525;
 }
 
 .card:hover{
-  transform:translateY(-7px) scale(1.02);
-  box-shadow:0 15px 35px rgba(0,0,0,.6);
+  transform:translateY(-5px);
+  border-color:#e50914;
 }
 
 .poster{
-  height:250px;
+  height:290px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
-  background:linear-gradient(135deg,#151515,#3a0d11);
-  font-size:25px;
-  font-weight:900;
+  background:linear-gradient(145deg,#3b0000,#111);
+  font-size:24px;
+  font-weight:bold;
 }
 
-.poster.blue{
-  background:linear-gradient(135deg,#071827,#124b70);
+.card-body{
+  padding:16px;
 }
 
-.poster.green{
-  background:linear-gradient(135deg,#092014,#196b38);
-}
-
-.poster.gold{
-  background:linear-gradient(135deg,#211806,#805d0d);
-}
-
-.poster.purple{
-  background:linear-gradient(135deg,#190a25,#692b91);
-}
-
-.poster.korea{
-  background:linear-gradient(135deg,#160d1e,#713a68);
-}
-
-.poster.turkey{
-  background:linear-gradient(135deg,#250808,#a51919);
-}
-
-.poster.kids{
-  background:linear-gradient(135deg,#092334,#0c8ca8);
-}
-
-.info{
-  padding:15px;
-}
-
-.info h3{
-  font-size:17px;
+.card h3{
   margin-bottom:8px;
 }
 
-.meta{
-  color:#aaa;
+.card p{
+  color:#999;
   font-size:13px;
-  margin-bottom:10px;
-}
-
-.rating{
-  color:#ffc107;
+  min-height:36px;
 }
 
 .watch{
   width:100%;
-  margin-top:12px;
+  margin-top:14px;
   background:#e50914;
   color:white;
-  border:0;
-  padding:10px;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.watch:hover{
-  background:#ff202c;
 }
 
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.88);
-  z-index:500;
-  padding:30px;
-  overflow:auto;
+  background:rgba(0,0,0,.92);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.active{
+  display:flex;
 }
 
 .modal-box{
-  max-width:850px;
-  margin:40px auto;
-  background:#151515;
-  border-radius:12px;
-  padding:25px;
-  position:relative;
+  width:95%;
+  max-width:900px;
+  background:#111;
+  padding:20px;
+  border-radius:10px;
 }
 
 .close{
-  position:absolute;
-  right:20px;
-  top:15px;
-  font-size:30px;
+  float:right;
+  font-size:28px;
   cursor:pointer;
-  color:#aaa;
-}
-
-.close:hover{
-  color:white;
-}
-
-.modal h2{
-  color:#e50914;
-  margin-bottom:10px;
-}
-
-.modal p{
-  color:#ccc;
-  line-height:1.6;
-  margin:10px 0 20px;
 }
 
 video{
   width:100%;
-  border-radius:8px;
+  margin-top:15px;
   background:black;
-}
-
-.notice{
-  background:#211c08;
-  border:1px solid #715c0c;
-  color:#ffe99a;
-  padding:14px;
-  border-radius:8px;
-  margin-bottom:25px;
+  max-height:70vh;
 }
 
 footer{
-  margin-top:50px;
+  border-top:1px solid #222;
   padding:30px;
   text-align:center;
   color:#777;
-  border-top:1px solid #222;
 }
 
-.no-results{
-  display:none;
-  color:#aaa;
-  padding:40px 0;
-  text-align:center;
-  font-size:20px;
-}
-
-@media(max-width:1100px){
-  .grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-}
-
-@media(max-width:850px){
+@media(max-width:700px){
   header{
-    flex-direction:column;
-    align-items:stretch;
+    height:auto;
+    padding:15px;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  nav{
+    display:none;
   }
 
   .search{
     width:100%;
   }
 
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
-}
-
-@media(max-width:500px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-
   .hero{
-    padding:50px 7%;
+    min-height:380px;
+    padding:45px 6%;
   }
 
   .hero h1{
-    font-size:32px;
+    font-size:35px;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
   }
 
   .poster{
-    height:300px;
+    height:210px;
+    font-size:18px;
   }
 }
 </style>
@@ -344,641 +274,385 @@ footer{
 <header>
   <div class="logo">YDK FILM</div>
 
+  <nav>
+    <a href="#filmler">Filmler</a>
+  </nav>
+
   <input
-    class="search"
     id="search"
+    class="search"
     type="text"
     placeholder="🔎 Film ara..."
-    oninput="searchMovies()"
   >
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Film Dünyasına Hoş Geldin</h1>
+    <h1>YAĞIZ DEHA KAFTAR</h1>
 
     <p>
-      YAĞIZ DEHA KAFTAR Film Dünyası.
-      Kısa filmler, animasyonlar ve klasik sinema
-      tek bir yerde.
+      Ücretsiz izleyebileceğin açık lisanslı ve kamu malı kısa filmler.
+      Film seç, oynat ve keyfini çıkar.
     </p>
 
-    <button onclick="document.getElementById('films').scrollIntoView({behavior:'smooth'})">
-      🎬 Filmleri Keşfet
-    </button>
+    <div class="buttons">
+      <button class="play" onclick="document.getElementById('filmler').scrollIntoView()">
+        ▶ Filmleri Gör
+      </button>
+
+      <button class="info" onclick="alert('YAĞIZ DEHA KAFTAR Film')">
+        ⓘ Bilgi
+      </button>
+    </div>
   </div>
 </section>
 
-<div class="container" id="films">
+<main class="container" id="filmler">
 
-  <h2 class="section-title">🎬 Film Kataloğu</h2>
-
-  <div class="notice">
-    ℹ️ Bu sitede yalnızca kullanım hakkı doğrulanmış veya
-    kamu malı / Creative Commons içerikler oynatılmaktadır.
-  </div>
+  <h2 class="section-title">Film Kategorileri</h2>
 
   <div class="categories">
-    <button class="active" onclick="filterCategory('all',this)">Tümü</button>
-    <button onclick="filterCategory('amerika',this)">🇺🇸 Amerikan</button>
-    <button onclick="filterCategory('kore',this)">🇰🇷 Kore</button>
-    <button onclick="filterCategory('turkiye',this)">🇹🇷 Türk</button>
-    <button onclick="filterCategory('cocuk',this)">👧 Çocuk</button>
-    <button onclick="filterCategory('animasyon',this)">🎨 Animasyon</button>
+    <button class="category active" data-cat="all">Tümü</button>
+    <button class="category" data-cat="american">🇺🇸 Amerikan</button>
+    <button class="category" data-cat="korean">🇰🇷 Kore</button>
+    <button class="category" data-cat="turkish">🇹🇷 Türk</button>
+    <button class="category" data-cat="kids">👧 Çocuk</button>
+    <button class="category" data-cat="animation">🎨 Animasyon</button>
   </div>
 
-  <div class="grid" id="movieGrid"></div>
+  <div class="grid" id="filmGrid">
 
-  <div class="no-results" id="noResults">
-    😕 Aradığın film bulunamadı.
+    <article class="card" data-cat="animation">
+      <div class="poster">BIG BUCK BUNNY</div>
+      <div class="card-body">
+        <h3>Big Buck Bunny</h3>
+        <p>Animasyon · CC BY 3.0</p>
+        <button class="watch"
+          onclick="openFilm(
+          'Big Buck Bunny',
+          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm'
+          )">
+          ▶ İzle
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">ELEPHANTS DREAM</div>
+      <div class="card-body">
+        <h3>Elephants Dream</h3>
+        <p>Animasyon · CC BY 2.5</p>
+        <button class="watch"
+          onclick="openFilm(
+          'Elephants Dream',
+          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants_Dream_(2006).webm'
+          )">
+          ▶ İzle
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="kids">
+      <div class="poster">CINDERELLA</div>
+      <div class="card-body">
+        <h3>Cinderella</h3>
+        <p>1911 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm(
+          'Cinderella (1911)',
+          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cinderella_(1911).webm'
+          )">
+          ▶ İzle
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="american">
+      <div class="poster">A BUSY DAY</div>
+      <div class="card-body">
+        <h3>A Busy Day</h3>
+        <p>1914 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm(
+          'A Busy Day (1914)',
+          'https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm'
+          )">
+          ▶ İzle
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="american">
+      <div class="poster">MABEL'S BUSY DAY</div>
+      <div class="card-body">
+        <h3>Mabel's Busy Day</h3>
+        <p>1914 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm(
+          'Mabel’s Busy Day (1914)',
+          'https://commons.wikimedia.org/wiki/Special:Redirect/file/Mabel%27s_Busy_Day_(1914).webm'
+          )">
+          ▶ İzle
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="american">
+      <div class="poster">FROM HAND TO MOUTH</div>
+      <div class="card-body">
+        <h3>From Hand to Mouth</h3>
+        <p>1919 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm(
+          'From Hand to Mouth (1919)',
+          ''
+          )">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="american">
+      <div class="poster">RAMONA</div>
+      <div class="card-body">
+        <h3>Ramona</h3>
+        <p>1910 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm('Ramona (1910)','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="american">
+      <div class="poster">THE KNOCKOUT</div>
+      <div class="card-body">
+        <h3>The Knockout</h3>
+        <p>1914 · Kamu malı</p>
+        <button class="watch"
+          onclick="openFilm('The Knockout (1914)','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">CAMINANDES</div>
+      <div class="card-body">
+        <h3>Caminandes</h3>
+        <p>Blender Open Movie</p>
+        <button class="watch"
+          onclick="openFilm('Caminandes','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">SPRING</div>
+      <div class="card-body">
+        <h3>Spring</h3>
+        <p>Blender Open Movie</p>
+        <button class="watch"
+          onclick="openFilm('Spring','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">TEARS OF STEEL</div>
+      <div class="card-body">
+        <h3>Tears of Steel</h3>
+        <p>Blender Open Movie</p>
+        <button class="watch"
+          onclick="openFilm('Tears of Steel','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">SINTEL</div>
+      <div class="card-body">
+        <h3>Sintel</h3>
+        <p>Blender Open Movie</p>
+        <button class="watch"
+          onclick="openFilm('Sintel','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="animation">
+      <div class="poster">COSMOS LAUNDR0MAT</div>
+      <div class="card-body">
+        <h3>Cosmos Laundromat</h3>
+        <p>Blender Open Movie</p>
+        <button class="watch"
+          onclick="openFilm('Cosmos Laundromat','')">
+          ▶ Bilgi
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="korean">
+      <div class="poster">KORE SHORT 01</div>
+      <div class="card-body">
+        <h3>Kore Kısa Film</h3>
+        <p>Yakında eklenecek</p>
+        <button class="watch"
+          onclick="alert('Kore filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="korean">
+      <div class="poster">KORE ANIMATION</div>
+      <div class="card-body">
+        <h3>Kore Animasyonu</h3>
+        <p>Yakında eklenecek</p>
+        <button class="watch"
+          onclick="alert('Kore filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="turkish">
+      <div class="poster">TÜRK KISA 01</div>
+      <div class="card-body">
+        <h3>Türk Kısa Film</h3>
+        <p>Yakında eklenecek</p>
+        <button class="watch"
+          onclick="alert('Türk filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="turkish">
+      <div class="poster">TÜRK KISA 02</div>
+      <div class="card-body">
+        <h3>Türk Kısa Film 2</h3>
+        <p>Yakında eklenecek</p>
+        <button class="watch"
+          onclick="alert('Türk filmi için doğrulanmış açık lisanslı video hazırlanıyor.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="kids">
+      <div class="poster">ÇOCUK FİLMİ 01</div>
+      <div class="card-body">
+        <h3>Çocuk Filmi</h3>
+        <p>Açık lisanslı içerik</p>
+        <button class="watch"
+          onclick="alert('Film videosu yakında eklenecek.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="kids">
+      <div class="poster">ÇOCUK FİLMİ 02</div>
+      <div class="card-body">
+        <h3>Çocuk Filmi 2</h3>
+        <p>Açık lisanslı içerik</p>
+        <button class="watch"
+          onclick="alert('Film videosu yakında eklenecek.')">
+          Yakında
+        </button>
+      </div>
+    </article>
+
   </div>
-
-</div>
+</main>
 
 <div class="modal" id="modal">
   <div class="modal-box">
+    <span class="close" onclick="closeFilm()">×</span>
+    <h2 id="modalTitle">Film</h2>
 
-    <span class="close" onclick="closeMovie()">×</span>
-
-    <h2 id="modalTitle"></h2>
-
-    <div id="modalMeta" class="meta"></div>
-
-    <p id="modalDescription"></p>
-
-    <video id="player" controls playsinline></video>
-
-    <p id="credit" style="font-size:13px;color:#777;"></p>
-
+    <video id="video" controls>
+      <source id="videoSource" src="" type="video/webm">
+      Tarayıcınız video oynatmayı desteklemiyor.
+    </video>
   </div>
 </div>
 
 <footer>
-  © 2026 YAĞIZ DEHA KAFTAR | YDK Film Dünyası 🎬
+  © 2026 YAĞIZ DEHA KAFTAR · YDK FILM
 </footer>
 
 <script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const categories = document.querySelectorAll(".category");
 
-const movies = [
+search.addEventListener("input", function(){
+  const text = this.value.toLowerCase();
 
-{
- id:1,
- title:"Big Buck Bunny",
- country:"Animasyon",
- category:"animasyon",
- year:"2008",
- rating:"8.1",
- color:"green",
- description:"Blender Foundation tarafından hazırlanan eğlenceli ve ünlü açık lisanslı animasyon kısa filmi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — Creative Commons Attribution 3.0"
-},
+  cards.forEach(card=>{
+    const title = card.innerText.toLowerCase();
 
-{
- id:2,
- title:"Elephants Dream",
- country:"Animasyon",
- category:"animasyon",
- year:"2006",
- rating:"7.8",
- color:"purple",
- description:"Blender Foundation tarafından hazırlanan bilim kurgu temalı açık lisanslı animasyon.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants_Dream_(2006).webm",
- credit:"© Blender Foundation / Netherlands Media Art Institute — CC BY 2.5"
-},
-
-{
- id:3,
- title:"A Busy Day",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"gold",
- description:"Mack Sennett'in 1914 tarihli sessiz kısa komedi filmi. Kamu malıdır.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:4,
- title:"Cinderella",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1911",
- rating:"7.1",
- color:"purple",
- description:"1911 tarihli Amerikan sessiz kısa filmi. Kamu malıdır.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cinderella_(1911).webm",
- credit:"Public Domain"
-},
-
-{
- id:5,
- title:"Mabel's Busy Day",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"gold",
- description:"Mabel Normand'ın 1914 tarihli sessiz kısa komedisi. Kamu malıdır.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mabel's_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:6,
- title:"Big Buck Bunny — Kids",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"2008",
- rating:"8.1",
- color:"kids",
- description:"Çocuklar ve aileler için uygun eğlenceli animasyon.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-},
-
-{
- id:7,
- title:"Elephants Dream — Kids",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"2006",
- rating:"7.8",
- color:"kids",
- description:"Aileyle izlenebilecek yaratıcı animasyon kısa filmi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants_Dream_(2006).webm",
- credit:"© Blender Foundation — CC BY 2.5"
-},
-
-{
- id:8,
- title:"Amerikan Klasikleri",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1910'lar",
- rating:"7.0",
- color:"gold",
- description:"Klasik Amerikan sessiz sinemasından seçilmiş içerikler.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:9,
- title:"Sessiz Sinema",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"blue",
- description:"Eski Amerikan sessiz sinemasından kısa komedi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mabel's_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:10,
- title:"Masal Dünyası",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"1911",
- rating:"7.1",
- color:"purple",
- description:"Klasik Cinderella uyarlaması.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cinderella_(1911).webm",
- credit:"Public Domain"
-},
-
-{
- id:11,
- title:"Animasyon Dünyası",
- country:"🎨 Animasyon",
- category:"animasyon",
- year:"2008",
- rating:"8.1",
- color:"green",
- description:"Açık lisanslı animasyon dünyasına giriş.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-},
-
-{
- id:12,
- title:"Renkli Macera",
- country:"🎨 Animasyon",
- category:"animasyon",
- year:"2008",
- rating:"8.1",
- color:"blue",
- description:"Eğlenceli animasyon macerası.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-},
-
-{
- id:13,
- title:"Klasik Komedi",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"gold",
- description:"Klasik sessiz sinema komedisi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:14,
- title:"Eski Hollywood",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"purple",
- description:"Amerikan sessiz sinemasından klasik bir kısa film.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mabel's_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:15,
- title:"Çocuk Sineması",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"1911",
- rating:"7.1",
- color:"kids",
- description:"Klasik masal sinemasından çocuklara uygun içerik.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cinderella_(1911).webm",
- credit:"Public Domain"
-},
-
-{
- id:16,
- title:"Kore Sineması 01",
- country:"🇰🇷 Kore",
- category:"kore",
- year:"Yakında",
- rating:"—",
- color:"korea",
- description:"Kore kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:17,
- title:"Kore Sineması 02",
- country:"🇰🇷 Kore",
- category:"kore",
- year:"Yakında",
- rating:"—",
- color:"korea",
- description:"Kore kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:18,
- title:"Kore Sineması 03",
- country:"🇰🇷 Kore",
- category:"kore",
- year:"Yakında",
- rating:"—",
- color:"korea",
- description:"Kore kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:19,
- title:"Kore Sineması 04",
- country:"🇰🇷 Kore",
- category:"kore",
- year:"Yakında",
- rating:"—",
- color:"korea",
- description:"Kore kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:20,
- title:"Kore Sineması 05",
- country:"🇰🇷 Kore",
- category:"kore",
- year:"Yakında",
- rating:"—",
- color:"korea",
- description:"Kore kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:21,
- title:"Türk Sineması 01",
- country:"🇹🇷 Türkiye",
- category:"turkiye",
- year:"Yakında",
- rating:"—",
- color:"turkey",
- description:"Türk kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:22,
- title:"Türk Sineması 02",
- country:"🇹🇷 Türkiye",
- category:"turkiye",
- year:"Yakında",
- rating:"—",
- color:"turkey",
- description:"Türk kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:23,
- title:"Türk Sineması 03",
- country:"🇹🇷 Türkiye",
- category:"turkiye",
- year:"Yakında",
- rating:"—",
- color:"turkey",
- description:"Türk kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:24,
- title:"Türk Sineması 04",
- country:"🇹🇷 Türkiye",
- category:"turkiye",
- year:"Yakında",
- rating:"—",
- color:"turkey",
- description:"Türk kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:25,
- title:"Türk Sineması 05",
- country:"🇹🇷 Türkiye",
- category:"turkiye",
- year:"Yakında",
- rating:"—",
- color:"turkey",
- description:"Türk kısa filmi için lisans doğrulaması devam ediyor.",
- video:"",
- credit:"Yakında"
-},
-
-{
- id:26,
- title:"Çocuk Macerası 01",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"2008",
- rating:"8.1",
- color:"kids",
- description:"Aile ve çocuk izleyicileri için eğlenceli animasyon.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-},
-
-{
- id:27,
- title:"Çocuk Macerası 02",
- country:"👧 Çocuk",
- category:"cocuk",
- year:"2006",
- rating:"7.8",
- color:"kids",
- description:"Yaratıcı animasyon kısa filmi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants_Dream_(2006).webm",
- credit:"© Blender Foundation — CC BY 2.5"
-},
-
-{
- id:28,
- title:"Animasyon Klasikleri",
- country:"🎨 Animasyon",
- category:"animasyon",
- year:"2008",
- rating:"8.1",
- color:"green",
- description:"Açık lisanslı animasyonlardan seçki.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-},
-
-{
- id:29,
- title:"Sinema Arşivi",
- country:"🇺🇸 Amerika",
- category:"amerika",
- year:"1914",
- rating:"7.0",
- color:"gold",
- description:"Kamu malı klasik Amerikan kısa filmi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day_(1914).webm",
- credit:"Public Domain"
-},
-
-{
- id:30,
- title:"Final Film",
- country:"🎬 Özel Seçki",
- category:"all",
- year:"2008",
- rating:"8.1",
- color:"blue",
- description:"YDK Film Dünyası özel seçkisi.",
- video:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_alt.webm",
- credit:"© Blender Foundation — CC BY 3.0"
-}
-
-];
-
-let currentCategory = "all";
-
-function renderMovies(list){
-
-  const grid = document.getElementById("movieGrid");
-  const noResults = document.getElementById("noResults");
-
-  grid.innerHTML = "";
-
-  if(list.length === 0){
-    noResults.style.display = "block";
-    return;
-  }
-
-  noResults.style.display = "none";
-
-  list.forEach(movie => {
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.dataset.title = movie.title.toLowerCase();
-    card.dataset.category = movie.category;
-
-    card.innerHTML = `
-      <div class="poster ${movie.color}">
-        ${movie.country}<br><br>${movie.title}
-      </div>
-
-      <div class="info">
-
-        <h3>${movie.title}</h3>
-
-        <div class="meta">
-          ${movie.country} • ${movie.year}
-        </div>
-
-        <div class="rating">
-          ⭐ ${movie.rating}
-        </div>
-
-        <button class="watch"
-          onclick="openMovie(${movie.id})">
-          ▶️ ${movie.video ? "İzle" : "Yakında"}
-        </button>
-
-      </div>
-    `;
-
-    grid.appendChild(card);
-
+    card.style.display =
+      title.includes(text) ? "" : "none";
   });
-}
+});
 
-function openMovie(id){
+categories.forEach(button=>{
+  button.addEventListener("click",()=>{
+    categories.forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
 
-  const movie = movies.find(x => x.id === id);
+    const cat = button.dataset.cat;
 
-  document.getElementById("modalTitle").textContent = movie.title;
-
-  document.getElementById("modalMeta").textContent =
-    `${movie.country} • ${movie.year} • ⭐ ${movie.rating}`;
-
-  document.getElementById("modalDescription").textContent =
-    movie.description;
-
-  document.getElementById("credit").textContent =
-    movie.credit;
-
-  const player = document.getElementById("player");
-
-  if(movie.video){
-
-    player.src = movie.video;
-    player.style.display = "block";
-
-    player.load();
-
-  }else{
-
-    player.pause();
-    player.removeAttribute("src");
-    player.style.display = "none";
-
-  }
-
-  document.getElementById("modal").style.display = "block";
-  document.body.style.overflow = "hidden";
-}
-
-function closeMovie(){
-
-  const player = document.getElementById("player");
-
-  player.pause();
-  player.removeAttribute("src");
-
-  document.getElementById("modal").style.display = "none";
-
-  document.body.style.overflow = "auto";
-}
-
-function searchMovies(){
-
-  const text =
-    document.getElementById("search").value.toLowerCase().trim();
-
-  const cards =
-    document.querySelectorAll(".card");
-
-  let count = 0;
-
-  cards.forEach(card => {
-
-    const title = card.dataset.title;
-    const category = card.dataset.category;
-
-    const matchesText =
-      title.includes(text);
-
-    const matchesCategory =
-      currentCategory === "all" ||
-      category === currentCategory;
-
-    if(matchesText && matchesCategory){
-
-      card.style.display = "block";
-      count++;
-
-    }else{
-
-      card.style.display = "none";
-
-    }
-
+    cards.forEach(card=>{
+      if(cat === "all" || card.dataset.cat === cat){
+        card.style.display = "";
+      }else{
+        card.style.display = "none";
+      }
+    });
   });
+});
 
-  document.getElementById("noResults").style.display =
-    count === 0 ? "block" : "none";
-}
-
-function filterCategory(category, button){
-
-  currentCategory = category;
-
-  document
-    .querySelectorAll(".categories button")
-    .forEach(btn => btn.classList.remove("active"));
-
-  button.classList.add("active");
-
-  searchMovies();
-}
-
-window.onclick = function(event){
-
+function openFilm(title,url){
   const modal = document.getElementById("modal");
+  const video = document.getElementById("video");
+  const source = document.getElementById("videoSource");
 
-  if(event.target === modal){
-    closeMovie();
+  document.getElementById("modalTitle").textContent = title;
+
+  if(url){
+    source.src = url;
+    video.style.display = "block";
+    video.load();
+  }else{
+    source.src = "";
+    video.style.display = "none";
+    alert("Bu film için henüz doğrulanmış video bağlantısı eklenmedi.");
   }
 
-};
+  modal.classList.add("active");
+}
 
-renderMovies(movies);
+function closeFilm(){
+  const modal = document.getElementById("modal");
+  const video = document.getElementById("video");
 
+  video.pause();
+  modal.classList.remove("active");
+}
+
+document.getElementById("modal").addEventListener("click",function(e){
+  if(e.target === this){
+    closeFilm();
+  }
+});
 </script>
 
 </body>
