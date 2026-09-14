@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YDK FILM</title>
+<title>YDK FILM | YAĞIZ DEHA KAFTAR</title>
 
 <style>
 *{
@@ -13,152 +13,165 @@
 }
 
 body{
+  font-family:Arial,Helvetica,sans-serif;
   background:#080808;
   color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
 }
 
 header{
-  background:#090909;
-  padding:20px 5%;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
+  background:rgba(8,8,8,.96);
   border-bottom:1px solid #222;
+  padding:18px 5%;
 }
 
-.header-row{
+.nav{
+  max-width:1400px;
+  margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   gap:20px;
 }
 
 .logo{
-  color:#e50914;
-  font-size:30px;
+  font-size:26px;
   font-weight:900;
-  letter-spacing:2px;
+  color:#e50914;
+  letter-spacing:1px;
+  white-space:nowrap;
 }
 
 .search{
-  width:280px;
-  padding:12px 17px;
-  border-radius:25px;
+  flex:1;
+  max-width:450px;
+}
+
+.search input{
+  width:100%;
+  padding:12px 16px;
+  border-radius:6px;
   border:1px solid #444;
-  background:#151515;
+  background:#181818;
   color:#fff;
   outline:none;
 }
 
+.search input:focus{
+  border-color:#e50914;
+}
+
 .hero{
-  min-height:350px;
-  padding:70px 6%;
+  min-height:430px;
   display:flex;
   align-items:center;
+  padding:70px 5%;
   background:
-  linear-gradient(90deg,#050505 20%,rgba(5,5,5,.7),rgba(5,5,5,.1)),
-  radial-gradient(circle at right,#4d0d0d,#090909 60%);
+    radial-gradient(circle at 75% 40%,#351010 0%,transparent 35%),
+    linear-gradient(90deg,#080808 20%,#080808dd 55%,#160606);
+}
+
+.hero-content{
+  max-width:750px;
 }
 
 .hero h1{
-  font-size:55px;
-  margin-bottom:15px;
+  font-size:clamp(42px,7vw,78px);
+  line-height:.95;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#e50914;
 }
 
 .hero p{
-  max-width:650px;
-  color:#bbb;
-  font-size:18px;
-  line-height:1.6;
-}
-
-.container{
-  padding:35px 5%;
+  color:#ccc;
+  line-height:1.7;
+  font-size:17px;
 }
 
 section{
-  margin-bottom:45px;
+  max-width:1400px;
+  margin:auto;
+  padding:35px 5%;
 }
 
-h2{
+.section-title{
+  font-size:28px;
   margin-bottom:20px;
-  font-size:27px;
 }
 
-.categories{
+.filters{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
-.categories button{
-  background:#202020;
-  border:0;
+.filter{
+  border:1px solid #444;
+  background:#171717;
   color:#fff;
-  padding:10px 18px;
+  padding:9px 15px;
   border-radius:20px;
   cursor:pointer;
 }
 
-.categories button:hover,
-.categories button.active{
+.filter:hover,
+.filter.active{
   background:#e50914;
+  border-color:#e50914;
 }
-
-/* DEVAM ET */
-
-.continue-section{
-  display:none;
-}
-
-.continue-card{
-  max-width:390px;
-}
-
-/* FİLM */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-  gap:22px;
+  gap:18px;
 }
 
 .card{
   background:#151515;
-  border-radius:10px;
+  border-radius:8px;
   overflow:hidden;
-  transition:.25s;
+  border:1px solid #222;
+  transition:.2s;
 }
 
 .card:hover{
   transform:translateY(-5px);
-  box-shadow:0 12px 35px rgba(0,0,0,.6);
+  border-color:#555;
 }
 
 .poster{
-  height:280px;
+  height:270px;
+  background:
+    linear-gradient(135deg,#292929,#101010);
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
-  font-size:20px;
-  font-weight:bold;
-  background:linear-gradient(135deg,#222,#555);
 }
 
-.info{
+.poster-number{
+  font-size:42px;
+  font-weight:900;
+  color:#e50914;
+}
+
+.card-info{
   padding:15px;
 }
 
-.info h3{
+.card h3{
   font-size:17px;
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
-.info p{
+.meta{
   color:#999;
   font-size:13px;
   margin-bottom:12px;
@@ -166,194 +179,193 @@ h2{
 
 .watch{
   width:100%;
-  padding:10px;
   border:0;
-  border-radius:5px;
   background:#e50914;
   color:#fff;
-  font-weight:bold;
+  padding:11px;
+  border-radius:5px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .watch:hover{
-  background:#f6121d;
+  background:#f40612;
 }
 
-.progress-wrap{
-  height:5px;
-  background:#333;
-  border-radius:5px;
-  overflow:hidden;
-  margin-top:12px;
+.continue{
+  display:none;
+  background:#151515;
+  border:1px solid #333;
+  border-radius:8px;
+  padding:18px;
+  margin-bottom:30px;
+}
+
+.continue.show{
+  display:block;
+}
+
+.continue-title{
+  color:#e50914;
+  font-weight:bold;
+  margin-bottom:8px;
 }
 
 .progress{
+  height:6px;
+  background:#333;
+  border-radius:10px;
+  overflow:hidden;
+  margin:10px 0 15px;
+}
+
+.progress-bar{
   height:100%;
+  width:0;
   background:#e50914;
 }
 
-/* MAÇLAR */
-
-.matches{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+.matches-section{
+  background:#0d0d0d;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
 }
 
-.match-card{
-  background:
-  linear-gradient(145deg,#151515,#0d0d0d);
-  border:1px solid #292929;
-  border-radius:14px;
-  padding:22px;
-  transition:.25s;
+.match-group{
+  margin-bottom:38px;
 }
 
-.match-card:hover{
-  transform:translateY(-4px);
-  border-color:#e50914;
-}
-
-.match-league{
-  color:#aaa;
-  font-size:13px;
+.match-group h3{
+  font-size:22px;
   margin-bottom:15px;
 }
 
-.match-teams{
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-  line-height:1.7;
+.match-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
 }
 
-.fener{
-  color:#f5c400;
+.match-card{
+  background:#171717;
+  border:1px solid #292929;
+  border-radius:8px;
+  padding:20px;
 }
 
 .match-date{
-  text-align:center;
-  color:#bbb;
-  margin:12px 0;
+  color:#999;
+  font-size:13px;
+  margin-bottom:10px;
 }
 
-.live{
-  display:inline-block;
-  background:#d90000;
-  padding:5px 12px;
-  border-radius:15px;
-  font-size:12px;
+.match-teams{
+  font-size:20px;
   font-weight:bold;
-  margin-bottom:12px;
+  margin-bottom:15px;
 }
 
-.bein-button{
-  display:block;
+.bein{
+  display:inline-block;
   width:100%;
   text-align:center;
   text-decoration:none;
   background:#e50914;
   color:#fff;
-  padding:12px;
-  border-radius:6px;
+  padding:11px;
+  border-radius:5px;
   font-weight:bold;
-  margin-top:15px;
 }
 
-.bein-button:hover{
-  background:#f6121d;
+.bein:hover{
+  background:#f40612;
 }
 
-.match-note{
-  color:#777;
-  font-size:12px;
+.empty{
+  color:#888;
+  padding:30px 0;
+  display:none;
+}
+
+footer{
+  border-top:1px solid #222;
   text-align:center;
-  margin-top:10px;
-  line-height:1.5;
+  padding:35px 20px;
+  color:#777;
+  margin-top:30px;
 }
-
-/* MODAL */
 
 .modal{
   display:none;
   position:fixed;
   inset:0;
-  z-index:999;
-  background:rgba(0,0,0,.94);
+  z-index:3000;
+  background:rgba(0,0,0,.92);
   align-items:center;
   justify-content:center;
   padding:20px;
 }
 
+.modal.show{
+  display:flex;
+}
+
 .modal-box{
-  width:min(1000px,95vw);
+  width:min(1000px,100%);
   background:#111;
-  border-radius:12px;
+  border:1px solid #333;
+  border-radius:10px;
   overflow:hidden;
 }
 
 .modal-head{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:15px 20px;
-}
-
-.modal-head h2{
-  margin:0;
-  font-size:20px;
+  align-items:center;
+  padding:15px 18px;
+  border-bottom:1px solid #292929;
 }
 
 .close{
-  width:35px;
-  height:35px;
   border:0;
-  border-radius:50%;
   background:#333;
   color:#fff;
+  width:38px;
+  height:38px;
+  border-radius:50%;
   cursor:pointer;
   font-size:20px;
 }
 
 video{
-  display:block;
   width:100%;
   max-height:70vh;
+  display:block;
   background:#000;
 }
 
-footer{
-  text-align:center;
-  color:#666;
-  padding:45px 20px;
-  border-top:1px solid #222;
-}
-
 @media(max-width:700px){
-
-  .header-row{
+  .nav{
     flex-direction:column;
-    align-items:flex-start;
+    align-items:stretch;
   }
 
-  .search{
-    width:100%;
+  .logo{
+    text-align:center;
   }
 
-  .hero h1{
-    font-size:38px;
+  .hero{
+    min-height:350px;
+    padding:50px 5%;
   }
 
   .grid{
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
   }
 
   .poster{
     height:220px;
-    font-size:16px;
   }
-
 }
 </style>
 </head>
@@ -361,937 +373,875 @@ footer{
 <body>
 
 <header>
-  <div class="header-row">
+  <div class="nav">
     <div class="logo">YDK FILM</div>
 
-    <input
-      id="search"
-      class="search"
-      type="text"
-      placeholder="Film ara..."
-      oninput="searchFilms()"
-    >
+    <div class="search">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Film ara..."
+        autocomplete="off"
+      >
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div>
-    <h1>YAĞIZ DEHA KAFTAR</h1>
-
+  <div class="hero-content">
+    <h1>YAĞIZ <span>DEHA</span> KAFTAR</h1>
     <p>
-      Ücretsiz ve yasal olarak izlenebilen klasik ve açık lisanslı
-      filmlerden oluşan YDK FILM arşivi.
+      Ücretsiz ve açık lisanslı / kamu malı kısa filmleri keşfet.
+      Filmini seç, kaldığın yerden devam et ve klasik sinemanın tadını çıkar.
     </p>
   </div>
 </section>
 
-<div class="container">
+<section>
+  <div id="continueBox" class="continue">
+    <div class="continue-title">▶ İzlemeye Devam Et</div>
+    <div id="continueName"></div>
 
-<!-- =========================
-     İZLEMEYE DEVAM ET
-========================= -->
+    <div class="progress">
+      <div id="continueProgress" class="progress-bar"></div>
+    </div>
 
-<section
-  id="continueSection"
-  class="continue-section"
->
+    <button id="continueButton" class="watch">
+      Kaldığın Yerden Devam Et
+    </button>
+  </div>
 
-  <h2>▶ İzlemeye Devam Et</h2>
+  <h2 class="section-title">🎬 FİLMLER</h2>
 
-  <div
-    id="continueCard"
-    class="continue-card"
-  ></div>
+  <div class="filters">
+    <button class="filter active" data-category="Tümü">Tümü</button>
+    <button class="filter" data-category="Komedi">Komedi</button>
+    <button class="filter" data-category="Chaplin">Chaplin</button>
+    <button class="filter" data-category="Animasyon">Animasyon</button>
+    <button class="filter" data-category="Klasik">Klasik</button>
+  </div>
 
+  <div id="filmGrid" class="grid"></div>
+  <div id="empty" class="empty">Film bulunamadı.</div>
 </section>
 
+<section class="matches-section">
 
-<!-- =========================
-     MAÇLAR
-========================= -->
+  <h2 class="section-title">⚽ MAÇLAR</h2>
 
-<section>
+  <div class="match-group">
+    <h3>🟡🔵 Fenerbahçe</h3>
 
-  <h2>⚽ MAÇLAR</h2>
+    <div class="match-grid">
 
-  <div class="matches">
-
-    <div class="match-card">
-
-      <div class="match-league">
-        🏆 Trendyol Süper Lig
-      </div>
-
-      <div class="match-teams">
-
-        <div>
-          Gaziantep FK
+      <div class="match-card">
+        <div class="match-date">14 Eylül 2026</div>
+        <div class="match-teams">
+          Gaziantep FK – Fenerbahçe
         </div>
 
-        <div class="fener">
-          Fenerbahçe 🟡🔵
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+      <div class="match-card">
+        <div class="match-date">Sezon 2026/27</div>
+        <div class="match-teams">
+          Fenerbahçe – Süper Lig
         </div>
 
-      </div>
-
-      <div class="match-date">
-        📅 14 Eylül 2026
-      </div>
-
-      <div style="text-align:center;">
-
-        <span class="live">
-          🔴 MAÇ / CANLI BİLGİ
-        </span>
-
-      </div>
-
-      <a
-        class="bein-button"
-        href="https://www.beinconnect.com.tr/mac-basliyor/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ▶ MAÇI İZLE
-      </a>
-
-      <div class="match-note">
-        Resmi beIN SPORTS sayfasına yönlendirilirsin.
-        Üyeliğinle giriş yaparak yayını izleyebilirsin.
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
       </div>
 
     </div>
+  </div>
 
+  <div class="match-group">
+    <h3>🟡🔴 Galatasaray</h3>
 
-    <div class="match-card">
+    <div class="match-grid">
 
-      <div class="match-league">
-        🌍 UEFA Şampiyonlar Ligi
-      </div>
-
-      <div class="match-teams">
-
-        <div>
-          Fenerbahçe 🟡🔵
+      <div class="match-card">
+        <div class="match-date">Sezon 2026/27</div>
+        <div class="match-teams">
+          Galatasaray – Süper Lig
         </div>
 
-        <div>
-          Avrupa Rakibi
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+      <div class="match-card">
+        <div class="match-date">29 Kasım 2026</div>
+        <div class="match-teams">
+          Beşiktaş – Galatasaray
         </div>
 
-      </div>
-
-      <div class="match-date">
-        📅 Fikstür için resmi sayfaya bak
-      </div>
-
-      <div style="text-align:center;">
-
-        <span class="live">
-          🏆 ŞAMPİYONLAR LİGİ
-        </span>
-
-      </div>
-
-      <a
-        class="bein-button"
-        href="https://beinsports.com.tr/lig/sampiyonlar-ligi"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ▶ MAÇ BİLGİLERİ
-      </a>
-
-      <div class="match-note">
-        Güncel rakip, tarih ve yayın bilgileri
-        resmi sayfada gösterilir.
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
       </div>
 
     </div>
+  </div>
 
+  <div class="match-group">
+    <h3>⚫⚪ Beşiktaş</h3>
+
+    <div class="match-grid">
+
+      <div class="match-card">
+        <div class="match-date">Sezon 2026/27</div>
+        <div class="match-teams">
+          Beşiktaş – Süper Lig
+        </div>
+
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+      <div class="match-card">
+        <div class="match-date">29 Kasım 2026</div>
+        <div class="match-teams">
+          Beşiktaş – Galatasaray
+        </div>
+
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="match-group">
+    <h3>🔵🔴 Trabzonspor</h3>
+
+    <div class="match-grid">
+
+      <div class="match-card">
+        <div class="match-date">Sezon 2026/27</div>
+        <div class="match-teams">
+          Trabzonspor – Süper Lig
+        </div>
+
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="match-group">
+    <h3>🏆 Şampiyonlar Ligi</h3>
+
+    <div class="match-grid">
+
+      <div class="match-card">
+        <div class="match-date">UEFA Champions League</div>
+        <div class="match-teams">
+          Şampiyonlar Ligi
+        </div>
+
+        <a
+          class="bein"
+          href="https://www.beinconnect.com.tr/mac-basliyor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📺 Maçı İzle
+        </a>
+      </div>
+
+    </div>
   </div>
 
 </section>
-
-
-<!-- =========================
-     FİLM KATALOĞU
-========================= -->
-
-<section>
-
-<h2>🎬 Film Kataloğu — 30 Film</h2>
-
-<div class="categories">
-
-<button
-  class="active"
-  onclick="filterFilms('all',this)"
->
-Tümü
-</button>
-
-<button
-  onclick="filterFilms('comedy',this)"
->
-😂 Komedi
-</button>
-
-<button
-  onclick="filterFilms('chaplin',this)"
->
-🎩 Chaplin
-</button>
-
-<button
-  onclick="filterFilms('animation',this)"
->
-🎨 Animasyon
-</button>
-
-<button
-  onclick="filterFilms('classic',this)"
->
-🎞️ Klasik
-</button>
-
-</div>
-
-<div
-  class="grid"
-  id="filmGrid"
-></div>
-
-</section>
-
-</div>
-
 
 <footer>
-  © 2026 YDK FILM — YAĞIZ DEHA KAFTAR
+  <div>YDK FILM</div>
+  <div style="margin-top:8px;">
+    YAĞIZ DEHA KAFTAR © 2026
+  </div>
 </footer>
 
+<div id="modal" class="modal">
+  <div class="modal-box">
 
-<!-- =========================
-     VİDEO OYNATICI
-========================= -->
+    <div class="modal-head">
+      <strong id="modalTitle">Film</strong>
 
-<div
-  class="modal"
-  id="modal"
->
+      <button id="closeModal" class="close">
+        ×
+      </button>
+    </div>
 
-<div class="modal-box">
-
-  <div class="modal-head">
-
-    <h2 id="modalTitle">
-      Film
-    </h2>
-
-    <button
-      class="close"
-      onclick="closeModal()"
-    >
-      ×
-    </button>
+    <video id="videoPlayer" controls playsinline></video>
 
   </div>
-
-  <video
-    id="player"
-    controls
-    playsinline
-    preload="metadata"
-  ></video>
-
 </div>
-
-</div>
-
 
 <script>
 
-/* =========================
-   30 FİLM
-========================= */
+const BEIN_URL =
+  "https://www.beinconnect.com.tr/mac-basliyor/";
 
 const films = [
 
-{
-id:1,
-title:"A Busy Day",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Busy_Day.webm"
-},
+  {
+    id:1,
+    title:"A Busy Day",
+    year:1914,
+    category:"Komedi",
+    file:"A_Busy_Day_(1914).webm"
+  },
 
-{
-id:2,
-title:"Between Showers",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Between_Showers.webm"
-},
+  {
+    id:2,
+    title:"Between Showers",
+    year:1914,
+    category:"Chaplin",
+    file:"Between_Showers_(1914).webm"
+  },
 
-{
-id:3,
-title:"Caught in the Rain",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Caught_in_the_Rain.webm"
-},
+  {
+    id:3,
+    title:"Caught in the Rain",
+    year:1914,
+    category:"Komedi",
+    file:"Caught_in_the_Rain_(1914).webm"
+  },
 
-{
-id:4,
-title:"Cruel, Cruel Love",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cruel_Cruel_Love.webm"
-},
+  {
+    id:4,
+    title:"Cruel, Cruel Love",
+    year:1914,
+    category:"Klasik",
+    file:"Cruel_Cruel_Love_(1914).webm"
+  },
 
-{
-id:5,
-title:"The Face on the Bar Room Floor",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Face_on_the_Bar_Room_Floor.webm"
-},
+  {
+    id:5,
+    title:"The Face on the Bar Room Floor",
+    year:1914,
+    category:"Klasik",
+    file:"The_Face_on_the_Bar_Room_Floor_(1914).webm"
+  },
 
-{
-id:6,
-title:"The Fatal Mallet",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Fatal_Mallet.webm"
-},
+  {
+    id:6,
+    title:"The Fatal Mallet",
+    year:1914,
+    category:"Komedi",
+    file:"The_Fatal_Mallet_(1914).webm"
+  },
 
-{
-id:7,
-title:"A Film Johnnie",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Film_Johnnie.webm"
-},
+  {
+    id:7,
+    title:"A Film Johnnie",
+    year:1914,
+    category:"Chaplin",
+    file:"A_Film_Johnnie_(1914).webm"
+  },
 
-{
-id:8,
-title:"Gentlemen of Nerve",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Gentlemen_of_Nerve.webm"
-},
+  {
+    id:8,
+    title:"Gentlemen of Nerve",
+    year:1914,
+    category:"Komedi",
+    file:"Gentlemen_of_Nerve_(1914).webm"
+  },
 
-{
-id:9,
-title:"Getting Acquainted",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Getting_Acquainted.webm"
-},
+  {
+    id:9,
+    title:"Getting Acquainted",
+    year:1914,
+    category:"Komedi",
+    file:"Getting_Acquainted_(1914).webm"
+  },
 
-{
-id:10,
-title:"His Favorite Pastime",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Favorite_Pastime.webm"
-},
+  {
+    id:10,
+    title:"His Favorite Pastime",
+    year:1914,
+    category:"Chaplin",
+    file:"His_Favorite_Pastime_(1914).webm"
+  },
 
-{
-id:11,
-title:"His Musical Career",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Musical_Career.webm"
-},
+  {
+    id:11,
+    title:"His Musical Career",
+    year:1914,
+    category:"Komedi",
+    file:"His_Musical_Career_(1914).webm"
+  },
 
-{
-id:12,
-title:"His New Profession",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/His_New_Profession.webm"
-},
+  {
+    id:12,
+    title:"His New Profession",
+    year:1914,
+    category:"Chaplin",
+    file:"His_New_Profession_(1914).webm"
+  },
 
-{
-id:13,
-title:"His Prehistoric Past",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Prehistoric_Past.webm"
-},
+  {
+    id:13,
+    title:"His Prehistoric Past",
+    year:1914,
+    category:"Klasik",
+    file:"His_Prehistoric_Past_(1914).webm"
+  },
 
-{
-id:14,
-title:"His Trysting Place",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/His_Trysting_Place.webm"
-},
+  {
+    id:14,
+    title:"His Trysting Place",
+    year:1914,
+    category:"Komedi",
+    file:"His_Trysting_Place_(1914).webm"
+  },
 
-{
-id:15,
-title:"The Rounders",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Rounders.webm"
-},
+  {
+    id:15,
+    title:"The Rounders",
+    year:1914,
+    category:"Komedi",
+    file:"The_Rounders_(1914).webm"
+  },
 
-{
-id:16,
-title:"Tango Tangles",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tango_Tangles.webm"
-},
+  {
+    id:16,
+    title:"Tango Tangles",
+    year:1914,
+    category:"Komedi",
+    file:"Tango_Tangles_(1914).webm"
+  },
 
-{
-id:17,
-title:"Those Love Pangs",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Those_Love_Pangs.webm"
-},
+  {
+    id:17,
+    title:"Those Love Pangs",
+    year:1914,
+    category:"Chaplin",
+    file:"Those_Love_Pangs_(1914).webm"
+  },
 
-{
-id:18,
-title:"Twenty Minutes of Love",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Twenty_Minutes_of_Love.webm"
-},
+  {
+    id:18,
+    title:"Twenty Minutes of Love",
+    year:1914,
+    category:"Chaplin",
+    file:"Twenty_Minutes_of_Love_(1914).webm"
+  },
 
-{
-id:19,
-title:"A Thief Catcher",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/A_Thief_Catcher.webm"
-},
+  {
+    id:19,
+    title:"A Thief Catcher",
+    year:1914,
+    category:"Komedi",
+    file:"A_Thief_Catcher_(1914).webm"
+  },
 
-{
-id:20,
-title:"The Knockout",
-year:"1914",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Knockout.webm"
-},
+  {
+    id:20,
+    title:"The Knockout",
+    year:1914,
+    category:"Komedi",
+    file:"The_Knockout_(1914).webm"
+  },
 
-{
-id:21,
-title:"By the Sun's Rays",
-year:"1914",
-category:"classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/By_the_Sun%27s_Rays.webm"
-},
+  {
+    id:21,
+    title:"By the Sun’s Rays",
+    year:1914,
+    category:"Klasik",
+    file:"By_the_Sun's_Rays_(1914).webm"
+  },
 
-{
-id:22,
-title:"Algie the Miner",
-year:"1912",
-category:"comedy classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Algie_the_Miner.webm"
-},
+  {
+    id:22,
+    title:"Algie the Miner",
+    year:1912,
+    category:"Klasik",
+    file:"Algie_the_Miner_(1912).webm"
+  },
 
-{
-id:23,
-title:"Dr. Jekyll and Mr. Hyde",
-year:"1912",
-category:"classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dr._Jekyll_and_Mr._Hyde_(1912).webm"
-},
+  {
+    id:23,
+    title:"Dr. Jekyll and Mr. Hyde",
+    year:1912,
+    category:"Klasik",
+    file:"Dr._Jekyll_and_Mr._Hyde_(1912).webm"
+  },
 
-{
-id:24,
-title:"The Adventurer",
-year:"1917",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Adventurer_(1917).webm"
-},
+  {
+    id:24,
+    title:"The Adventurer",
+    year:1917,
+    category:"Chaplin",
+    file:"The_Adventurer_(1917).webm"
+  },
 
-{
-id:25,
-title:"Bliss",
-year:"1917",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bliss_(1917).webm"
-},
+  {
+    id:25,
+    title:"Bliss",
+    year:1917,
+    category:"Klasik",
+    file:"Bliss_(1917).webm"
+  },
 
-{
-id:26,
-title:"The Candy Kid",
-year:"1917",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Candy_Kid.webm"
-},
+  {
+    id:26,
+    title:"The Candy Kid",
+    year:1917,
+    category:"Komedi",
+    file:"The_Candy_Kid_(1917).webm"
+  },
 
-{
-id:27,
-title:"The Chief Cook",
-year:"1917",
-category:"comedy classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Chief_Cook.webm"
-},
+  {
+    id:27,
+    title:"The Chief Cook",
+    year:1917,
+    category:"Komedi",
+    file:"The_Chief_Cook_(1917).webm"
+  },
 
-{
-id:28,
-title:"Out West",
-year:"1918",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Out_West.webm"
-},
+  {
+    id:28,
+    title:"Out West",
+    year:1918,
+    category:"Komedi",
+    file:"Out_West_(1918).webm"
+  },
 
-{
-id:29,
-title:"Triple Trouble",
-year:"1918",
-category:"comedy chaplin classic",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Triple_Trouble.webm"
-},
+  {
+    id:29,
+    title:"Triple Trouble",
+    year:1918,
+    category:"Chaplin",
+    file:"Triple_Trouble_(1918).webm"
+  },
 
-{
-id:30,
-title:"Big Buck Bunny",
-year:"2008",
-category:"animation",
-url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_4K.webm"
-}
+  {
+    id:30,
+    title:"Big Buck Bunny",
+    year:2008,
+    category:"Animasyon",
+    file:"Big_Buck_Bunny_1080p.webm"
+  }
 
 ];
 
+const filmGrid = document.getElementById("filmGrid");
+const empty = document.getElementById("empty");
+const searchInput = document.getElementById("searchInput");
 
-let currentFilter="all";
-let currentFilm=null;
+let currentCategory = "Tümü";
+let currentFilm = null;
 
-const grid=document.getElementById("filmGrid");
-const search=document.getElementById("search");
-const modal=document.getElementById("modal");
-const player=document.getElementById("player");
-const modalTitle=document.getElementById("modalTitle");
+function videoUrl(file){
 
-
-/* =========================
-   FİLMLERİ GÖSTER
-========================= */
-
-function renderFilms(list){
-
-grid.innerHTML="";
-
-list.forEach(film=>{
-
-const saved=getProgress(film.id);
-
-const card=document.createElement("div");
-
-card.className="card";
-
-let progress="";
-
-if(saved && saved.percent>0){
-
-progress=`
-<div class="progress-wrap">
-<div
-class="progress"
-style="width:${saved.percent}%">
-</div>
-</div>
-`;
+  return "https://commons.wikimedia.org/wiki/Special:Redirect/file/"
+    + encodeURIComponent(file);
 
 }
 
-card.innerHTML=`
+function renderFilms(){
 
-<div class="poster">
-${film.title}
-</div>
+  const search =
+    searchInput.value.trim().toLowerCase();
 
-<div class="info">
+  const filtered = films.filter(film => {
 
-<h3>${film.title}</h3>
+    const categoryOK =
+      currentCategory === "Tümü"
+      || film.category === currentCategory;
 
-<p>
-${film.year} • ${getCategoryName(film.category)}
-</p>
+    const searchOK =
+      !search
+      || film.title.toLowerCase().includes(search)
+      || String(film.year).includes(search)
+      || film.category.toLowerCase().includes(search);
 
-<button
-class="watch"
-onclick="openFilm(${film.id})"
->
-▶ İzle
-</button>
+    return categoryOK && searchOK;
 
-${progress}
+  });
 
-</div>
-`;
+  filmGrid.innerHTML = "";
 
-grid.appendChild(card);
+  empty.style.display =
+    filtered.length ? "none" : "block";
 
-});
+  filtered.forEach(film => {
 
-}
+    const card =
+      document.createElement("article");
 
+    card.className = "card";
 
-/* =========================
-   KATEGORİ
-========================= */
+    card.innerHTML = `
+      <div class="poster">
+        <div>
+          <div class="poster-number">${film.id}</div>
+          <div>${film.category}</div>
+        </div>
+      </div>
 
-function getCategoryName(category){
+      <div class="card-info">
 
-if(category.includes("animation"))
-return "Animasyon";
+        <h3>${film.title}</h3>
 
-if(category.includes("chaplin"))
-return "Charlie Chaplin";
+        <div class="meta">
+          ${film.year} • ${film.category}
+        </div>
 
-if(category.includes("comedy"))
-return "Komedi";
+        <button
+          class="watch"
+          onclick="openFilm(${film.id})"
+        >
+          ▶ İzle
+        </button>
 
-return "Klasik";
+      </div>
+    `;
 
-}
+    filmGrid.appendChild(card);
 
-
-function filterFilms(category,button){
-
-currentFilter=category;
-
-document
-.querySelectorAll(".categories button")
-.forEach(btn=>btn.classList.remove("active"));
-
-button.classList.add("active");
-
-updateFilms();
+  });
 
 }
 
+function progressKey(id){
 
-/* =========================
-   ARAMA
-========================= */
-
-function searchFilms(){
-
-updateFilms();
+  return "ydk_progress_" + id;
 
 }
 
+function saveProgress(){
 
-function updateFilms(){
+  if(!currentFilm) return;
 
-const text=search.value
-.toLowerCase()
-.trim();
+  const video =
+    document.getElementById("videoPlayer");
 
-const result=films.filter(film=>{
+  if(!video.duration) return;
 
-const categoryOK=
-currentFilter==="all" ||
-film.category.includes(currentFilter);
+  const data = {
 
-const searchOK=
-film.title
-.toLowerCase()
-.includes(text);
+    currentTime:video.currentTime,
 
-return categoryOK && searchOK;
+    percent:
+      (video.currentTime / video.duration) * 100,
 
-});
+    title:currentFilm.title
 
-renderFilms(result);
+  };
+
+  localStorage.setItem(
+    progressKey(currentFilm.id),
+    JSON.stringify(data)
+  );
+
+  updateContinue();
 
 }
-
-
-/* =========================
-   FİLMİ AÇ
-========================= */
 
 function openFilm(id){
 
-const film=films.find(f=>f.id===id);
+  const film =
+    films.find(item => item.id === id);
 
-if(!film)return;
+  if(!film) return;
 
-currentFilm=film;
+  currentFilm = film;
 
-modalTitle.textContent=film.title;
+  const modal =
+    document.getElementById("modal");
 
-player.src=film.url;
+  const video =
+    document.getElementById("videoPlayer");
 
-modal.style.display="flex";
+  const title =
+    document.getElementById("modalTitle");
 
-const saved=getProgress(id);
+  title.textContent =
+    film.title + " (" + film.year + ")";
 
-player.onloadedmetadata=function(){
+  video.src =
+    videoUrl(film.file);
 
-if(saved && saved.time>0){
+  modal.classList.add("show");
 
-try{
-player.currentTime=saved.time;
-}catch(e){}
+  video.load();
+
+  const saved =
+    localStorage.getItem(progressKey(film.id));
+
+  if(saved){
+
+    try{
+
+      const data =
+        JSON.parse(saved);
+
+      video.addEventListener(
+        "loadedmetadata",
+        function resume(){
+
+          if(
+            data.currentTime > 0 &&
+            data.currentTime < video.duration
+          ){
+
+            video.currentTime =
+              data.currentTime;
+
+          }
+
+          video.removeEventListener(
+            "loadedmetadata",
+            resume
+          );
+
+        }
+      );
+
+    }catch(e){}
+
+  }
+
+  video.play().catch(()=>{});
 
 }
 
-player.play().catch(()=>{});
+function closeFilm(){
 
-};
+  const modal =
+    document.getElementById("modal");
+
+  const video =
+    document.getElementById("videoPlayer");
+
+  saveProgress();
+
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+
+  modal.classList.remove("show");
+
+  currentFilm = null;
 
 }
 
+function updateContinue(){
 
-/* =========================
-   İZLEME İLERLEMESİ
-========================= */
+  const box =
+    document.getElementById("continueBox");
 
-player.addEventListener(
-"timeupdate",
-function(){
+  const name =
+    document.getElementById("continueName");
 
-if(!currentFilm)return;
+  const bar =
+    document.getElementById("continueProgress");
 
-if(!player.duration ||
-!isFinite(player.duration))
-return;
+  let latest = null;
 
-const time=player.currentTime;
+  films.forEach(film => {
 
-const percent=Math.min(
-100,
-(time/player.duration)*100
+    const saved =
+      localStorage.getItem(progressKey(film.id));
+
+    if(!saved) return;
+
+    try{
+
+      const data =
+        JSON.parse(saved);
+
+      if(
+        data.percent > 1 &&
+        data.percent < 99
+      ){
+
+        latest = {
+          film:film,
+          data:data
+        };
+
+      }
+
+    }catch(e){}
+
+  });
+
+  if(!latest){
+
+    box.classList.remove("show");
+    return;
+
+  }
+
+  box.classList.add("show");
+
+  name.textContent =
+    latest.film.title
+    + " — "
+    + Math.round(latest.data.percent)
+    + "%";
+
+  bar.style.width =
+    Math.min(
+      100,
+      latest.data.percent
+    ) + "%";
+
+  document.getElementById(
+    "continueButton"
+  ).onclick = function(){
+
+    openFilm(latest.film.id);
+
+  };
+
+}
+
+searchInput.addEventListener(
+  "input",
+  renderFilms
 );
 
-localStorage.setItem(
-"ydk_progress_"+currentFilm.id,
-JSON.stringify({
-time:time,
-percent:percent,
-title:currentFilm.title
-})
+document.querySelectorAll(
+  ".filter"
+).forEach(button => {
+
+  button.addEventListener(
+    "click",
+    function(){
+
+      document.querySelectorAll(
+        ".filter"
+      ).forEach(b =>
+        b.classList.remove("active")
+      );
+
+      this.classList.add("active");
+
+      currentCategory =
+        this.dataset.category;
+
+      renderFilms();
+
+    }
+  );
+
+});
+
+document.getElementById(
+  "closeModal"
+).addEventListener(
+  "click",
+  closeFilm
 );
 
-showContinue();
+document.getElementById(
+  "modal"
+).addEventListener(
+  "click",
+  function(event){
 
-}
+    if(event.target === this){
+      closeFilm();
+    }
+
+  }
 );
 
-
-/* =========================
-   FİLM BİTİNCE
-========================= */
-
-player.addEventListener(
-"ended",
-function(){
-
-if(!currentFilm)return;
-
-localStorage.removeItem(
-"ydk_progress_"+currentFilm.id
+document.getElementById(
+  "videoPlayer"
+).addEventListener(
+  "timeupdate",
+  saveProgress
 );
 
-currentFilm=null;
+document.getElementById(
+  "videoPlayer"
+).addEventListener(
+  "ended",
+  function(){
 
-showContinue();
+    if(currentFilm){
 
-updateFilms();
+      localStorage.removeItem(
+        progressKey(currentFilm.id)
+      );
 
-}
+    }
+
+    updateContinue();
+
+  }
 );
-
-
-/* =========================
-   KAPAT
-========================= */
-
-function closeModal(){
-
-player.pause();
-
-player.removeAttribute("src");
-
-player.load();
-
-modal.style.display="none";
-
-currentFilm=null;
-
-showContinue();
-
-updateFilms();
-
-}
-
-
-/* =========================
-   DIŞARI TIKLAMA
-========================= */
-
-modal.addEventListener(
-"click",
-function(e){
-
-if(e.target===modal){
-closeModal();
-}
-
-}
-);
-
-
-/* ESC */
 
 document.addEventListener(
-"keydown",
-function(e){
+  "keydown",
+  function(event){
 
-if(e.key==="Escape"){
-closeModal();
-}
+    if(
+      event.key === "Escape" &&
+      document.getElementById(
+        "modal"
+      ).classList.contains("show")
+    ){
 
-}
+      closeFilm();
+
+    }
+
+  }
 );
 
-
-/* =========================
-   KAYITLI KONUM
-========================= */
-
-function getProgress(id){
-
-try{
-
-const data=
-localStorage.getItem(
-"ydk_progress_"+id
-);
-
-if(!data)return null;
-
-return JSON.parse(data);
-
-}catch(e){
-
-return null;
-
-}
-
-}
-
-
-/* =========================
-   İZLEMEYE DEVAM ET
-========================= */
-
-function showContinue(){
-
-const section=
-document.getElementById(
-"continueSection"
-);
-
-const card=
-document.getElementById(
-"continueCard"
-);
-
-let savedFilm=null;
-let savedData=null;
-
-for(
-let i=films.length-1;
-i>=0;
-i--
-){
-
-const data=getProgress(
-films[i].id
-);
-
-if(data && data.time>5){
-
-savedFilm=films[i];
-
-savedData=data;
-
-break;
-
-}
-
-}
-
-if(!savedFilm){
-
-section.style.display="none";
-
-card.innerHTML="";
-
-return;
-
-}
-
-section.style.display="block";
-
-const percent=Math.round(
-savedData.percent || 0
-);
-
-card.innerHTML=`
-
-<div class="card">
-
-<div class="poster">
-${savedFilm.title}
-</div>
-
-<div class="info">
-
-<h3>
-${savedFilm.title}
-</h3>
-
-<p>
-${savedFilm.year}
-•
-%${percent} izlendi
-</p>
-
-<button
-class="watch"
-onclick="openFilm(${savedFilm.id})"
->
-▶ Kaldığın Yerden Devam Et
-</button>
-
-<div class="progress-wrap">
-
-<div
-class="progress"
-style="width:${percent}%">
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/* =========================
-   BAŞLANGIÇ
-========================= */
-
-renderFilms(films);
-
-showContinue();
+renderFilms();
+updateContinue();
 
 </script>
 
